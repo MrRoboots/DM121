@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DM121</string>
+    <string name="not_connected">请先连接蓝牙打印机</string>
+    <string name="title_connecting">正在连接。。。</string>
+    <string name="title_connected_to">已连接 :server</string>
+    <string name="title_not_connected">没有连接</string>
+    <string name="bt_not_enabled_leaving">蓝牙没有启动，退出程序</string>
+</resources>

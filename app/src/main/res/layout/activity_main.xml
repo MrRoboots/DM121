@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_state_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态:"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tv_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 未连接 "
+        android:textColor="#C71585"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_state_title" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_state">
+
+        <Button
+            android:id="@+id/bt_bt_check_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="initbt"
+            android:text="实例化蓝牙"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/bt_bt_get_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="connectbt"
+            android:text="连接蓝牙" />
+
+        <Button
+            android:id="@+id/bt_bt_close_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="closebt"
+            android:text="断开" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edt_print_str"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3" />
+
+    <Button
+        android:id="@+id/bt_print_pos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="posprint"
+        android:text="打印"
+        app:layout_constraintTop_toBottomOf="@+id/edt_print_str" />
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bt_print_pos">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="table1"
+            android:text="样式1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DSLineFeed"
+            android:text="换行" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="DSPrintImg"
+            android:visibility="gone"
+            android:text="打印条形码和QR码" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="test1"
+            android:text="测试1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        app:layout_constraintTop_toBottomOf="@id/linear4">
+
+        <TextView
+            android:id="@+id/tv_title_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打印位置"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/edt_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="输入x坐标"
+            android:text="0" />
+
+        <EditText
+            android:id="@+id/edt_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="输入y坐标"
+            android:text="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="printPosition"
+            android:text="打印位置" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_title_hei"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="黑标操作"
+        android:textSize="17dp"
+        app:layout_constraintTop_toBottomOf="@id/ln_3" />
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_hei">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendBlackPrint"
+            android:text="送黑标纸到打印位" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sendBlackCut"
+            android:text="送黑标纸到撕纸位" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear5">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="taoda"
+            android:text="套打样式" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
